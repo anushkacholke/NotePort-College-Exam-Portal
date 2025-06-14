@@ -1,0 +1,485 @@
+/* Layout */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+/* Layout containers */
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Headings */
+.heading-xl {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: #38bdf8;
+  position: relative;
+  -webkit-text-stroke: .4px white;
+}
+
+.heading-xl::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #3b82f6;
+  margin: 0.5rem auto 0;
+  border-radius: 10px;
+}
+
+/*selcet*/
+select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #3b82f6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem 0.5rem 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  background-color: #334155;
+  border-color: #2563eb;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+label {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-right: 0.5rem;
+  color: #cbd5e1;
+}
+
+/* Cards */
+.card {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1e293b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #334155;
+}
+
+.logo {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #eaecef;
+  text-decoration: none;
+  -webkit-text-stroke: .9px rgb(171, 21, 34);
+}
+.nav-right {
+  display: flex;
+  gap: 1.2rem;
+}
+a:link{
+  text-decoration: none;
+}
+.nav-link {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.nav-link.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Optional mobile style (basic) */
+@media (max-width: 600px) {
+  .nav-right {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-end;
+  }
+}
+
+.pdf-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.pdf-button {
+  background-color: #1f2937;
+  color: white;
+  border: 1px solid #3b82f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.pdf-button:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.icon {
+  margin-right: 6px;
+}
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 70px;
+  margin-top: -1rem;
+  -webkit-text-stroke: .6px red;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.9rem;
+  font: size 30px; ;
+  font-weight: bold;
+}
+
+/* Features grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background-color: #334155;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.view-btn {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #3b82f6;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 1rem;
+  color: #cbd5e1;
+  border-top: 1px solid #334155;
+  margin-top: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #c8cfd7;
+}
+
+.contact-form button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #2563eb;
+}
+/*references*/
+.references-section h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #60a5fa;
+  -webkit-text-stroke: .1px white;
+}
+
+.references-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.references-section li {
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.references-section li:hover {
+  background-color: #334155;
+}
+
+.references-section a {
+  font-size: 1rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.references-section a:hover {
+  text-decoration: underline;
+}
+
+/*exam,TP,notes*/
+
+.card {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  background-color: #334155;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #e0f2fe;
+}
+
+.card a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card .pdf-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.card .pdf-button {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.card .pdf-button:hover {
+  background-color: #2563eb;
+}
+
+.references-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.references-section li {
+  background-color: #1e293b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.references-section li:hover {
+  background-color: #334155;
+}
+
+.references-section a {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+.references-section a:hover {
+  text-decoration: underline;
+}
+
+/*carousel*/
+.carousel {
+  text-align: center;
+  background-color: #1e293b;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 12px ;
+  animation: fadeSlide 1s ease-in-out;
+  -webkit-text-stroke: .4px rgb(233, 103, 103);
+}
+
+.carousel h2 {
+  color: #3b82f6;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*TP*/
+.branch-selector {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.branch-btn {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #3b82f6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.branch-btn:hover {
+  background-color: #334155;
+}
+
+.branch-btn.active {
+  background-color: #3b82f6;
+  color: white;
+}
